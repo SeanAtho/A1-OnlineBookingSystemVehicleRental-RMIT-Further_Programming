@@ -1,4 +1,5 @@
-Algorithm
+# Assignment 1: Online Booking System for Vehicle Rentals 
+## Algorithm
 1.	Read the CSV file and store the vehicle data into an appropriate data structure, such as an ArrayList of objects.
 2.	Display the main menu with the following options: a. Search by Brand b. Browse by vehicle type c. Filter by number of passengers d. Exit
 3.	If the user selects "Search by Brand," prompt the user to enter the brand name and display all the vehicles matching the brand name.
@@ -13,6 +14,4 @@ Algorithm
 12.	Print the reservation details and exit the program.
 
 
-Adaptation/Changes
-- Add more classes and methods
-- 
+## Adaptation/Changes
