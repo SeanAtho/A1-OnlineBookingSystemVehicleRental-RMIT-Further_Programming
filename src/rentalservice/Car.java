@@ -1,33 +1,34 @@
 package rentalservice;
 
 public class Car {
-    // Fields to represent the characteristics of a car
-    private String carID;
-    private String brand;
-    private String model;
-    private String vehicleType;
-    private int numOfPassengers;
-    private int yearOfManufacture;
-    private String color;
+    // Instance variables
+    private String vehicleID;           // unique ID of the car
+    private String brand;               // brand of the car
+    private String model;               // model of the car
+    private String type;                // type of the car (e.g. sedan, SUV, sports car)
+    private int yearOfManufacture;      // year of manufacture of the car
+    private int numOfSeats;             // number of seats in the car
+    private String color;               // color of the car
 
-    // Constructor to create a Car object with the given characteristics
-    public Car(String carID, String brand, String model, String vehicleType, int numOfPassengers, int yearOfManufacture, String color) {
-        this.carID = carID;
+    // Constructor
+    public Car(String vehicleID, String brand, String model, String type, int yearOfManufacture, int numOfSeats, String color) {
+        // Initialize instance variables with constructor parameters
+        this.vehicleID = vehicleID;
         this.brand = brand;
         this.model = model;
-        this.vehicleType = vehicleType;
-        this.numOfPassengers = numOfPassengers;
+        this.type = type;
         this.yearOfManufacture = yearOfManufacture;
+        this.numOfSeats = numOfSeats;
         this.color = color;
     }
 
-    // Getter and setter methods for each field
-    public String getCarID() {
-        return carID;
+    // Getters and setters for instance variables
+    public String getVehicleID() {
+        return vehicleID;
     }
 
-    public void setCarID(String carID) {
-        this.carID = carID;
+    public void setVehicleID(String vehicleID) {
+        this.vehicleID = vehicleID;
     }
 
     public String getBrand() {
@@ -46,20 +47,12 @@ public class Car {
         this.model = model;
     }
 
-    public String getVehicleType() {
-        return vehicleType;
+    public String getType() {
+        return type;
     }
 
-    public void setVehicleType(String vehicleType) {
-        this.vehicleType = vehicleType;
-    }
-
-    public int getNumOfPassengers() {
-        return numOfPassengers;
-    }
-
-    public void setNumOfPassengers(int numOfPassengers) {
-        this.numOfPassengers = numOfPassengers;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public int getYearOfManufacture() {
@@ -68,6 +61,14 @@ public class Car {
 
     public void setYearOfManufacture(int yearOfManufacture) {
         this.yearOfManufacture = yearOfManufacture;
+    }
+
+    public int getNumOfSeats() {
+        return numOfSeats;
+    }
+
+    public void setNumOfSeats(int numOfSeats) {
+        this.numOfSeats = numOfSeats;
     }
 
     public String getColor() {
@@ -82,12 +83,12 @@ public class Car {
     @Override
     public String toString() {
         return "Car{" +
-                "carID='" + carID + '\'' +
+                "vehicleID='" + vehicleID + '\'' +
                 ", brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
-                ", vehicleType='" + vehicleType + '\'' +
-                ", numOfPassengers=" + numOfPassengers +
+                ", type='" + type + '\'' +
                 ", yearOfManufacture=" + yearOfManufacture +
+                ", numOfSeats=" + numOfSeats +
                 ", color='" + color + '\'' +
                 '}';
     }
