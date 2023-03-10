@@ -1,5 +1,5 @@
 package rentalservice;
 
-public class Main {
+public class Rental {
     
 }
