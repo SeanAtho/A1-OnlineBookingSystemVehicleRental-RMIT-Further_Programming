@@ -20,7 +20,7 @@ public class Inventory {
         this.rentalPrice = rentalPrice;
         this.insurancePrice = insurancePrice;
         this.serviceFee = serviceFee;
-        this.discount = discount;
+        this.discount = discount/100.0; // Convert discount percentage to decimal value
     }
 
     public ArrayList<Car> getCars() {
@@ -29,10 +29,6 @@ public class Inventory {
 
     public HashMap<String, Integer> getAvailableCars() {
         return availableCars;
-    }
-
-    public void setAvailableCars(HashMap<String, Integer> availableCars) {
-        this.availableCars = availableCars;
     }
 
     public double getRentalPrice() {
@@ -60,11 +56,11 @@ public class Inventory {
     }
 
     public double getDiscount() {
-        return discount;
+        return discount * 100; // Convert discount decimal value to percentage
     }
 
     public void setDiscount(double discount) {
-        this.discount = discount;
+        this.discount = discount/100.0; // Convert discount percentage to decimal value
     }
 
     public boolean isCarAvailable(Car car) {
