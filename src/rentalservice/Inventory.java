@@ -67,16 +67,6 @@ public class Inventory {
         this.discount = discount;
     }
 
-    public void addCar(Car car) {
-        this.cars.add(car);
-        this.availableCars.put(car.getVehicleID(), 1);
-    }
-
-    public void removeCar(Car car) {
-        this.cars.remove(car);
-        this.availableCars.remove(car.getVehicleID());
-    }
-
     public boolean isCarAvailable(Car car) {
         return this.availableCars.get(car.getVehicleID()) != null && this.availableCars.get(car.getVehicleID()) > 0;
     }
