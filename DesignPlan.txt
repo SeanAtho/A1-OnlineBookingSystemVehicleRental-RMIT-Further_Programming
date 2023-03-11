@@ -1,0 +1,5 @@
+Start coding from the core functionality of the program. In this case, that would be the Car and Inventory classes, since they represent the cars and their list in the program.
+
+First, you can start by implementing the Car class with its properties and methods. Then, move on to the Inventory class, which will hold a list of Car objects and allow for operations such as searching and filtering based on various criteria.
+
+Once you have these classes implemented and tested, you can move on to the Rental, Customer, ConsoleUI, Main, and MyCarApp classes, which build upon the core functionality provided by Car and Inventory. Remember to test each class thoroughly before moving on to the next one.
