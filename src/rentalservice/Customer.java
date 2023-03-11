@@ -1,9 +1,5 @@
 package rentalservice;
-
+// Represents a customer object with personal details such as name, email, and number of passengers.
 public class Customer {
-    // Methods:
-    //
-    // Constructor: to initialize the attributes of the customer.
-    // Getter and Setter methods for each attribute.
-    // validateEmailAddress(String email): to validate the email address of the customer.
+    
 }
