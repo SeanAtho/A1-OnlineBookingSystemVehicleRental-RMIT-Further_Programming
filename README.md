@@ -14,4 +14,12 @@
 12.	Print the reservation details and exit the program.
 
 
-## Adaptation/Changes
+
+## Overview of what each class in the current design does:
+•	Car.java: Represents a single car object with properties such as brand, model, type of vehicle, year of manufacture, number of seats, and color.
+•	Inventory.java: Maintains a list of all the cars in the fleet, allowing for operations such as searching and filtering based on various criteria.
+•	Rental.java: Represents a rental object that contains details such as the car being rented, rental duration, rental fee, insurance fee, and any discounts applied.
+•	Customer.java: Represents a customer object with personal details such as name, email, and number of passengers.
+•	ConsoleUI.java: Handles the user interface and allows users to interact with the program through the console.
+•	Main.java: Entry Point for MyCar Application.
+•	MyCarApp.java: Acts as the controller, orchestrating interactions between the model (Inventory, Rental, Customer) and view (ConsoleUI) classes, and implementing program logic such as searching, filtering, and rental booking.
