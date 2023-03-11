@@ -15,10 +15,12 @@
 
 
 ## Overview of what each class in the current design does:
-1.	Car.java: Represents a single car object with properties such as brand, model, type of vehicle, year of manufacture, number of seats, and color.
-2.	Inventory.java: Maintains a list of all the cars in the fleet, allowing for operations such as searching and filtering based on various criteria.
-3.	Rental.java: Represents a rental object that contains details such as the car being rented, rental duration, rental fee, insurance fee, and any discounts applied.
-4.	Customer.java: Represents a customer object with personal details such as name, email, and number of passengers.
-5.	ConsoleUI.java: Handles the user interface and allows users to interact with the program through the console.
-6.	Main.java: Entry Point for MyCar Application.
-7.	MyCarApp.java: Acts as the controller, orchestrating interactions between the model (Inventory, Rental, Customer) and view (ConsoleUI) classes, and implementing program logic such as searching, filtering, and rental booking.
+The current classes in the provided program are:
+
+    Car - Represents a single car object with properties such as brand, model, type of vehicle, year of manufacture, number of seats, and color.
+    Inventory - Maintains a list of all the cars in the fleet, allowing for operations such as searching and filtering based on various criteria.
+    Rental - Represents a rental object that contains details such as the car being rented, rental duration, rental fee, insurance fee, and any discounts applied.
+    Customer - Represents a customer object with personal details such as name, email, and number of passengers.
+    ConsoleUI - Handles the user interface and allows users to interact with the program through the console.
+    Main - Acts as the entry point of the program.
+    MyCarApp - Acts as the controller, orchestrating interactions between the model (Inventory, Rental, Customer) and view (ConsoleUI) classes, and implementing program logic such as searching, filtering, and rental booking.
