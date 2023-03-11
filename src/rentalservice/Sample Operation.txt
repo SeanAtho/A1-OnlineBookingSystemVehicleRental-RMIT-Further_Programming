@@ -1,0 +1,91 @@
+Welcome to MyCar! 
+-----------------------------------------------------------------------------
+> Select from main menu 
+-----------------------------------------------------------------------------
+
+1) Search by brand 
+2) Browse by vehicle type 
+3) Filter by number of passenger 
+4) Exit 
+Please select: 1
+Please provide a brand: Toyota
+> Select from matching list
+-----------------------------------------------------------------------------
+
+1) C001 – Toyota Yaris Sedan with 4 seats 
+2) C002 – Toyota Corolla Hatch with 4 seats 
+3) C003 – Toyota Kluger SUV with 7 seats 
+4) Go to main menu Please select: 4 
+Select from main menu 
+1) Search by brand 
+2) Browse by vehicle type 
+3) Filter by number of passengers 
+4) Exit 
+
+Please select: 2 
+> Browse by type of vehicle
+-----------------------------------------------------------------------------
+
+1) Sedan 
+2) Hatch 
+3) SUV 
+4) Go to main menu 
+Please select: 3 
+> Select from list of SUVs
+-----------------------------------------------------------------------------
+
+1) C003 – Toyota Kluger SUV with 7 seats 
+2) C006 – BMW X5 SUV with 7 seats 
+3) C009 – Ford Puma SUV with 5 seats 
+4) Go to main menu Please select: 4 
+> Select from main menu
+-----------------------------------------------------------------------------
+
+1) Search by brand 
+2) Browse by vehicle type 
+3) Filter by number of passengers 
+4) Exit 
+Please select: 3 Please provide the number of passengers: 6 
+> Select from matching list
+-----------------------------------------------------------------------------
+
+1) C003 – Toyota Kluger SUV with 7 seats 
+2) C006 – BMW X5 SUV with 7 seats 
+3) Go to main menu Please select: 1 
+
+> Provide dates
+-----------------------------------------------------------------------------
+Please provide pick-up date (dd/mm/yyyy): 12/12/2022 
+Please provide return date (dd/mm/yyyy): 15/12/2022
+-----------------------------------------------------------------------------
+> Show vehicle details
+-----------------------------------------------------------------------------
+Vehicle: C003
+Brand: Toyota
+Model: Kluger
+Type of Vehicle: SUV
+Year of Manufacture: 2019
+No. Of Seats: 7
+Color: Grey
+Rental: $280.00 ($70.00 * 4 days)
+Discounted Price: $280.00 (Discount is not applicable) 
+Insurance: $80.00 ($20.00 * 4 days) 
+Service Fee: $20.00 
+Total: $380.00 
+Would you like to reserve the vehicle (Y/N)? Y 
+> Provide personal information
+
+-----------------------------------------------------------------------------
+Please provide your given name: James 
+Please provide your surname: Bond 
+Please provide your email address: james.bond@mi6.com 
+Please provide number of passengers: 6 Confirm and pay (Y/N): Y 
+> Congratulations! Your vehicle is booked
+-----------------------------------------------------------------------------
+Name: James Bond 
+Email: james.bond@mi6.com 
+Your Vehicle: Toyota Kluger SUV with 7 seats 
+Number of passengers: 6
+Pick-up date: 12-12-2022 
+Return Date: 15-12-2022 
+Total Payment: $380.00 
