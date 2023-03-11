@@ -105,4 +105,14 @@ public class MyCarApp {
         }
     }
 
-    public void filterBySe
+    public void filterBySeats(int seats){
+        List<Car> cars = inventory.filterBySeats(seats);
+        if (cars.isEmpty()) {
+            System.out.println("No cars found.");
+        } else {
+            System.out.println("Cars with matching " + seats + " of seats:");
+            for (Car car : cars) {
+                System.out.println(car.toString());
+        }
+    }
+
