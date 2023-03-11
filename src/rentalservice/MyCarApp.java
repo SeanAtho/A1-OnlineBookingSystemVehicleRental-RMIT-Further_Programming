@@ -115,5 +115,20 @@ public class MyCarApp {
                 System.out.println(car.toString());
         }
     }
-}
+    
+    public void bookRental(int carId, Customer customer, LocalDate startDate, LocalDate endDate) {
+        // Get the car by its ID
+        Car car = inventory.getCarById(carId);
+    
+        // Create a new rental object
+        Rental rental = new Rental(car, customer, startDate, endDate);
+    
+        // Add the rental to the car's rental history
+        car.addRental(rental);
+    
+        // Print out the rental details
+        System.out.println("Rental booked successfully:");
+        System.out.println(rental.toString());
+    }
+    
 }
