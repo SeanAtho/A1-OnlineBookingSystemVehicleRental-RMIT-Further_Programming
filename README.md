@@ -24,3 +24,65 @@ The current classes in the provided program are:
     ConsoleUI - Handles the user interface and allows users to interact with the program through the console.
     Main - Acts as the entry point of the program.
     MyCarApp - Acts as the controller, orchestrating interactions between the model (Inventory, Rental, Customer) and view (ConsoleUI) classes, and implementing program logic such as searching, filtering, and rental booking.
+
+
+
+    In this diagram, the Car class represents a single car object with its properties. The Inventory class maintains a list of all the cars in the fleet, allowing for operations such as searching and filtering based on various criteria. The Rental class represents a rental object that contains details such as the car being rented, rental duration, rental fee, insurance fee, and any discounts applied. The Customer class represents a customer object with personal details such as name, email, and number of passengers. The ConsoleUI class handles the user interface and
+
+    +---------------------+               +-------------------+                  +-------------------+
+|       Car           |               |     Inventory     |                  |      Rental       |
++---------------------+               +-------------------+                  +-------------------+
+| -id: int            |               | -cars: List<Car>  |                  | -car: Car         |
+| -brand: String      |               |                   |                  | -duration: int    |
+| -model: String      |               |                   |                  | -rentalFee: float |
+| -type: String       |               |                   |                  | -insuranceFee: float |
+| -year: int          |               |                   |                  | -discount: float  |
+| -numSeats: int      |               |                   |                  |                   |
+| -color: String      |               |                   |                  |                   |
+| -rentalPrice: float |               |                   |                  |                   |
+| -insurancePrice: float|             |                   |                  |                   |
++---------------------+               +-------------------+                  +-------------------+
+| +Car()              |               | +Inventory()      |                  | +Rental()         |
+| +getId(): int       |               | +addCar(Car): void|                  | +calculateFee(): void |
+| +getBrand(): String |               | +removeCar(Car): void|                | +getDuration(): int |
+| +getModel(): String |               | +searchCarsByBrand(String): List<Car>| +setDuration(int): void |
+| +getType(): String  |               | +filterCarsByType(String): List<Car>| +getRentalFee(): float |
+| +getYear(): int     |               | +filterCarsBySeats(int): List<Car>| +getInsuranceFee(): float |
+| +getNumSeats(): int |               | +getAvailableCars(): List<Car>| +getDiscount(): float |
+| +getColor(): String |               |                   |                  |                   |
+| +getRentalPrice(): float|           |                   |                  |                   |
+| +getInsurancePrice(): float|        |                   |                  |                   |
++---------------------+               +-------------------+                  +-------------------+
+             |
+             |
+             |
++---------------------+
+|       Customer      |
++---------------------+
+| -id: int            |
+| -name: String       |
+| -email: String      |
+| -numPassengers: int |
++---------------------+
+| +Customer()         |
+| +getId(): int       |
+| +getName(): String  |
+| +getEmail(): String |
+| +getNumPassengers(): int |
++---------------------+
+               |
+               |
+               |
++---------------------+
+|      ConsoleUI      |
++---------------------+
+| +run(): void        |
++---------------------+
+               |
+               |
+               |
++---------------------+
+|        Main         |
++---------------------+
+| +main(args: String[]): void |
++---------------------+
