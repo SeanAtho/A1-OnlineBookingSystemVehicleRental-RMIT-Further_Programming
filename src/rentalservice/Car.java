@@ -6,6 +6,7 @@ package rentalservice;
 public class Car {
     
     // Properties of the Car class
+    private int id;
     private String brand;
     private String model;
     private String type;
@@ -35,6 +36,11 @@ public class Car {
     }
     
     // Getters for the properties of the Car class
+
+    public int getId() {
+        return id;
+    }
+    
     public String getBrand() {
         return brand;
     }
@@ -74,6 +80,7 @@ public class Car {
     public double getDiscount() {
         return discount;
     }
+    
     
     /**
      * Returns a string representation of the Car object.

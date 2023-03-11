@@ -64,20 +64,6 @@ public class Inventory {
     }
 
     /**
-     * Returns a list of all available cars in the inventory.
-     * @return a list of available cars
-     */
-    public List<Car> getAvailableCars() {
-        List<Car> result = new ArrayList<>();
-        for (Car car : cars) {
-            if (!car.isRented()) {
-                result.add(car);
-            }
-        }
-        return result;
-    }
-
-    /**
      * Retrieves a car object from the inventory by its unique ID.
      * @param id the ID of the car to retrieve
      * @return the car object with the matching ID, or null if not found
