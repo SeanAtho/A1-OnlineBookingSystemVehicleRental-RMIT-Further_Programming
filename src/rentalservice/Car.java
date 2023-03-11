@@ -1,95 +1,138 @@
 package rentalservice;
 
 public class Car {
-    // Instance variables
-    private String vehicleID;           // unique ID of the car
-    private String brand;               // brand of the car
-    private String model;               // model of the car
-    private String type;                // type of the car (e.g. sedan, SUV, sports car)
-    private int yearOfManufacture;      // year of manufacture of the car
-    private int numOfSeats;             // number of seats in the car
-    private String color;               // color of the car
+    private String id;
+    private String brand;
+    private String model;
+    private String type;
+    private int year;
+    private int seats;
+    private String color;
+    private double rentalPrice;
+    private double insurancePrice;
+    private double serviceFee;
+    private double discount;
 
-    // Constructor
-    public Car(String vehicleID, String brand, String model, String type, int yearOfManufacture, int numOfSeats, String color) {
-        // Initialize instance variables with constructor parameters
-        this.vehicleID = vehicleID;
+    // Constructor for Car object
+    public Car(String id, String brand, String model, String type, int year, int seats, String color, double rentalPrice, double insurancePrice, double serviceFee, double discount) {
+        this.id = id;
         this.brand = brand;
         this.model = model;
         this.type = type;
-        this.yearOfManufacture = yearOfManufacture;
-        this.numOfSeats = numOfSeats;
+        this.year = year;
+        this.seats = seats;
         this.color = color;
+        this.rentalPrice = rentalPrice;
+        this.insurancePrice = insurancePrice;
+        this.serviceFee = serviceFee;
+        this.discount = discount;
     }
 
-    // Getters and setters for instance variables
-    public String getVehicleID() {
-        return vehicleID;
-    }
-
-    public void setVehicleID(String vehicleID) {
-        this.vehicleID = vehicleID;
+    // Getter methods
+    public String getId() {
+        return id;
     }
 
     public String getBrand() {
         return brand;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
     public String getModel() {
         return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
     }
 
     public String getType() {
         return type;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public int getYear() {
+        return year;
     }
 
-    public int getYearOfManufacture() {
-        return yearOfManufacture;
-    }
-
-    public void setYearOfManufacture(int yearOfManufacture) {
-        this.yearOfManufacture = yearOfManufacture;
-    }
-
-    public int getNumOfSeats() {
-        return numOfSeats;
-    }
-
-    public void setNumOfSeats(int numOfSeats) {
-        this.numOfSeats = numOfSeats;
+    public int getSeats() {
+        return seats;
     }
 
     public String getColor() {
         return color;
     }
 
+    public double getRentalPrice() {
+        return rentalPrice;
+    }
+
+    public double getInsurancePrice() {
+        return insurancePrice;
+    }
+
+    public double getServiceFee() {
+        return serviceFee;
+    }
+
+    public double getDiscount() {
+        return discount;
+    }
+
+    // Setter methods
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public void setSeats(int seats) {
+        this.seats = seats;
+    }
+
     public void setColor(String color) {
         this.color = color;
     }
 
-    // Override the toString() method to provide a string representation of a Car object
+    public void setRentalPrice(double rentalPrice) {
+        this.rentalPrice = rentalPrice;
+    }
+
+    public void setInsurancePrice(double insurancePrice) {
+        this.insurancePrice = insurancePrice;
+    }
+
+    public void setServiceFee(double serviceFee) {
+        this.serviceFee = serviceFee;
+    }
+
+    public void setDiscount(double discount) {
+        this.discount = discount;
+    }
+
+    // toString method to return Car object details as a string
     @Override
     public String toString() {
         return "Car{" +
-                "vehicleID='" + vehicleID + '\'' +
+                "id='" + id + '\'' +
                 ", brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
                 ", type='" + type + '\'' +
-                ", yearOfManufacture=" + yearOfManufacture +
-                ", numOfSeats=" + numOfSeats +
+                ", year=" + year +
+                ", seats=" + seats +
                 ", color='" + color + '\'' +
+                ", rentalPrice=" + rentalPrice +
+                ", insurancePrice=" + insurancePrice +
+                ", serviceFee=" + serviceFee +
+                ", discount=" + discount +
                 '}';
     }
 }
