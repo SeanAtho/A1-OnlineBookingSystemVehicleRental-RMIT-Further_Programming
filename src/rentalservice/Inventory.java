@@ -1,4 +1,8 @@
 package rentalservice;
+
+import java.util.ArrayList;
+import java.util.List;
+
 // Maintains a list of all the cars in the fleet, allowing for operations such as searching and filtering based on various criteria.
 /**
  * The Inventory class maintains a list of all the cars in the fleet, allowing for operations such as
