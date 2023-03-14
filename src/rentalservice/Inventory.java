@@ -1,8 +1,11 @@
 package rentalservice;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
-import java.time.LocalDate;
+import java.util.Scanner;
+
 
 
 // Maintains a list of all the cars in the fleet, allowing for operations such as searching and filtering based on various criteria.
@@ -18,6 +21,25 @@ public class Inventory {
      */
     public Inventory() {
         cars = new ArrayList<>();
+        try (Scanner scanner = new Scanner(new File("fleet.csv"))) {
+            while (scanner.hasNextLine()) {
+                String[] fields = scanner.nextLine().split(",");
+                String brand = fields[0];
+                String model = fields[1];
+                String type = fields[2];
+                int year = Integer.parseInt(fields[3]);
+                int seats = Integer.parseInt(fields[4]);
+                String color = fields[5];
+                double rentalFee = Double.parseDouble(fields[6]);
+                double insuranceFee = Double.parseDouble(fields[7]);
+                double serviceFee = Double.parseDouble(fields[8]);
+                double discount = Double.parseDouble(fields[9]);
+                Car car = new Car(brand, model, type, year, seats, color, rentalFee, insuranceFee, serviceFee, discount);
+                cars.add(car);
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("Error: fleet.csv file not found.");
+        }
     }
 
     /**
@@ -74,27 +96,7 @@ public class Inventory {
         }
         return availableCars;
     }    
-
-    public boolean isCarAvailable(Car car, LocalDate startDate, LocalDate endDate) {
-        for (Rental rental : rentalList) {
-            if (rental.getCar().equals(car)) {
-                LocalDate rentalStartDate = rental.getStartDate();
-                LocalDate rentalEndDate = rental.getEndDate();
-                if (startDate.isBefore(rentalStartDate) && endDate.isBefore(rentalStartDate)) {
-                    // The rental is after the desired rental period
-                    continue;
-                } else if (startDate.isAfter(rentalEndDate) && endDate.isAfter(rentalEndDate)) {
-                    // The rental is before the desired rental period
-                    continue;
-                } else {
-                    // The rental overlaps with the desired rental period
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
-    
+   
 
     /**
      * Retrieves a car object from the inventory by its unique ID.
