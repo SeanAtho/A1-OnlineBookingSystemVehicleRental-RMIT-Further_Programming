@@ -17,7 +17,7 @@ public class ConsoleUI {
 
     public void start() {
         System.out.println("Welcome to MyCarApp!");
-
+    
         while (true) {
             System.out.println("Please select an option:");
             System.out.println("1. Search cars by brand");
@@ -27,9 +27,9 @@ public class ConsoleUI {
             System.out.println("5. View available cars");
             System.out.println("6. Book rental");
             System.out.println("7. Exit");
-
-            int choice = readIntInput("Choice");
-
+    
+            int choice = readValidIntInput("Choice", 1, 7);
+    
             switch (choice) {
                 case 1:
                     searchCarsByBrand();
@@ -58,6 +58,27 @@ public class ConsoleUI {
             }
         }
     }
+    
+    private int readValidIntInput(String prompt, int min, int max) {
+        int choice = 0;
+        boolean validInput = false;
+        do {
+            System.out.print(prompt + ": ");
+            try {
+                choice = scanner.nextInt();
+                if (choice >= min && choice <= max) {
+                    validInput = true;
+                } else {
+                    System.out.println("Invalid choice. Please select again.");
+                }
+            } catch (java.util.InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a number between " + min + " and " + max);
+                scanner.nextLine(); // consume the invalid input
+            }
+        } while (!validInput);
+        return choice;
+    }
+    
 
     private void searchCarsByBrand() {
         String brand = readStringInput("Brand");
