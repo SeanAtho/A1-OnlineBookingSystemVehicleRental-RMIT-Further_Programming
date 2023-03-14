@@ -76,5 +76,14 @@ public class Inventory {
         }
         return null;
     }
+
+    /**
+     * 
+     * @return the list of cars from the iventory object and returns it.
+    */
+    public List<Car> getCars() {
+        return cars;
+    }
+    
 }
 
