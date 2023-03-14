@@ -2,6 +2,8 @@ package rentalservice;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.time.LocalDate;
+
 
 // Maintains a list of all the cars in the fleet, allowing for operations such as searching and filtering based on various criteria.
 /**
@@ -62,6 +64,37 @@ public class Inventory {
         }
         return result;
     }
+
+    public List<Car> getAvailableCars() {
+        List<Car> availableCars = new ArrayList<>();
+        for (Car car : cars) {
+            if (car.isAvailable()) {
+                availableCars.add(car);
+            }
+        }
+        return availableCars;
+    }    
+
+    public boolean isCarAvailable(Car car, LocalDate startDate, LocalDate endDate) {
+        for (Rental rental : rentalList) {
+            if (rental.getCar().equals(car)) {
+                LocalDate rentalStartDate = rental.getStartDate();
+                LocalDate rentalEndDate = rental.getEndDate();
+                if (startDate.isBefore(rentalStartDate) && endDate.isBefore(rentalStartDate)) {
+                    // The rental is after the desired rental period
+                    continue;
+                } else if (startDate.isAfter(rentalEndDate) && endDate.isAfter(rentalEndDate)) {
+                    // The rental is before the desired rental period
+                    continue;
+                } else {
+                    // The rental overlaps with the desired rental period
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    
 
     /**
      * Retrieves a car object from the inventory by its unique ID.

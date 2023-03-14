@@ -17,6 +17,7 @@ public class Car {
     private double insuranceFee;
     private double serviceFee;
     private double discount;
+    private boolean available;
     
     /**
      * Constructor for the Car class.
@@ -82,6 +83,14 @@ public class Car {
     }
     
     
+    public boolean isAvailable() {
+        return available;
+    }
+
+    public void setAvailable(boolean available) {
+        this.available = available;
+    }
+
     /**
      * Returns a string representation of the Car object.
      */
