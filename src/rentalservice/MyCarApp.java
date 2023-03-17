@@ -48,12 +48,6 @@ public class MyCarApp {
         }
     }
 
-    public void viewAvailableCars() {
-        System.out.println("Available cars:");
-        for (Car car : inventory.getAvailableCars()) {
-            System.out.println(car);
-        }
-    }
 
     public void bookRental(String carId, Customer customer, LocalDate startDate, LocalDate endDate) {
         Car car = inventory.getCarById(carId);

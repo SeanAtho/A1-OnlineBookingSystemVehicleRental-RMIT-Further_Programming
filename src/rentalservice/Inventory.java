@@ -27,7 +27,6 @@ public class Inventory {
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 String[] fields = line.split(",");
-
                 String id = fields[0];
                 String brand = fields[1];
                 String model = fields[2];
@@ -91,17 +90,7 @@ public class Inventory {
             }
         }
         return result;
-    }
-
-    public List<Car> getAvailableCars() {
-        List<Car> availableCars = new ArrayList<>();
-        for (Car car : cars) {
-            if (car.isAvailable()) {
-                availableCars.add(car);
-            }
-        }
-        return availableCars;
-    }    
+    }  
    
 
     /**
@@ -109,9 +98,9 @@ public class Inventory {
      * @param id the ID of the car to retrieve
      * @return the car object with the matching ID, or null if not found
      */
-    public Car getCarById(String id) {
+    public Car getCarById(String CarId) {
         for (Car car : cars) {
-            if (car.getId() == id) {
+            if (car.getId() == CarId) {
                 return car;
             }
         }

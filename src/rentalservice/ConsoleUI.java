@@ -33,7 +33,7 @@ public class ConsoleUI {
             System.out.println("7. Exit");
             System.out.println("---------------------------------------------");
     
-            int choice = readValidIntInput("Choice", 1, 7);
+            int choice = readValidIntInput("Choice", 1, 6);
     
             switch (choice) {
                 case 1:
@@ -49,12 +49,9 @@ public class ConsoleUI {
                     viewCarDetails();
                     break;
                 case 5:
-                    viewAvailableCars();
-                    break;
-                case 6:
                     bookRental();
                     break;
-                case 7:
+                case 6:
                     exit();
                     break;
                 default:
@@ -103,10 +100,6 @@ public class ConsoleUI {
     private void viewCarDetails() {
         String carId = readStringInput("Car ID");
         myCarApp.viewCarDetails(carId);
-    }
-
-    private void viewAvailableCars() {
-        myCarApp.viewAvailableCars();
     }
 
     private void bookRental() {
