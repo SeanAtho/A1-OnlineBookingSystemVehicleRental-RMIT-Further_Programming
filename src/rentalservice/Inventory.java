@@ -21,7 +21,7 @@ public class Inventory {
      */
     public Inventory() {
         cars = new ArrayList<>();
-        try (Scanner scanner = new Scanner(new File("fleet.csv"))) {
+        try (Scanner scanner = new Scanner(new File("Fleet.csv"))) {
             while (scanner.hasNextLine()) {
                 String[] fields = scanner.nextLine().split(",");
                 String id = fields[0];
