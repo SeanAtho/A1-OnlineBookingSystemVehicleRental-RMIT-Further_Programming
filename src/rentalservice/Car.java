@@ -97,10 +97,10 @@ public class Car {
      */
     @Override
     public String toString() {
-        return "Car ID: " + this.id + "\nBrand: " + this.brand + "\nModel: " + this.model + "\nType: " + this.type + 
+        return "---------------------------------------------\n"+"Car ID: " + this.id + "\nBrand: " + this.brand + "\nModel: " + this.model + "\nType: " + this.type + 
                "\nYear: " + this.year + "\nSeats: " + this.seats + "\nColor: " + this.color + 
                "\nRental Fee: $" + this.rentalFee + "/day" + "\nInsurance Fee: $" + this.insuranceFee + "/day" + 
-               "\nService Fee: $" + this.serviceFee + "/day" + "\nDiscount: " + this.discount + "%";
+               "\nService Fee: $" + this.serviceFee + "/day" + "\nDiscount: " + this.discount + "%" +"\n---------------------------------------------";
     }
     
 }
