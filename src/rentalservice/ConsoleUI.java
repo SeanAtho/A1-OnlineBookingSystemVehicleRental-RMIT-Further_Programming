@@ -16,7 +16,9 @@ public class ConsoleUI {
     
 
     public void start() {
+        System.out.println("---------------------------------------------");
         System.out.println("Welcome to MyCarApp!");
+        System.out.println("---------------------------------------------");
     
         while (true) {
             System.out.println("Please select an option:");
@@ -27,6 +29,7 @@ public class ConsoleUI {
             System.out.println("5. View available cars");
             System.out.println("6. Book rental");
             System.out.println("7. Exit");
+            System.out.println("---------------------------------------------");
     
             int choice = readValidIntInput("Choice", 1, 7);
     
