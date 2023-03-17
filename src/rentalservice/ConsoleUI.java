@@ -28,9 +28,8 @@ public class ConsoleUI {
             System.out.println("2. Browse cars by type");
             System.out.println("3. Filter cars by number of seats");
             System.out.println("4. View car details");
-            System.out.println("5. View available cars");
-            System.out.println("6. Book rental");
-            System.out.println("7. Exit");
+            System.out.println("5. Book rental");
+            System.out.println("6. Exit");
             System.out.println("---------------------------------------------");
     
             int choice = readValidIntInput("Choice", 1, 6);
