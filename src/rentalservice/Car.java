@@ -6,7 +6,7 @@ package rentalservice;
 public class Car {
     
     // Properties of the Car class
-    private int id;
+    private String id;
     private String brand;
     private String model;
     private String type;
@@ -22,8 +22,9 @@ public class Car {
     /**
      * Constructor for the Car class.
      */
-    public Car(String brand, String model, String type, int year, int seats, String color, double rentalFee,
+    public Car(String id, String brand, String model, String type, int year, int seats, String color, double rentalFee,
                double insuranceFee, double serviceFee, double discount) {
+        this.id = id;
         this.brand = brand;
         this.model = model;
         this.type = type;
@@ -38,7 +39,7 @@ public class Car {
     
     // Getters for the properties of the Car class
 
-    public int getId() {
+    public String getId() {
         return id;
     }
     
@@ -96,18 +97,11 @@ public class Car {
      */
     @Override
     public String toString() {
-        return "Car{" +
-                "brand='" + brand + '\'' +
-                ", model='" + model + '\'' +
-                ", type='" + type + '\'' +
-                ", year=" + year +
-                ", seats=" + seats +
-                ", color='" + color + '\'' +
-                ", rentalFee=" + rentalFee +
-                ", insuranceFee=" + insuranceFee +
-                ", serviceFee=" + serviceFee +
-                ", discount=" + discount +
-                '}';
+        return "Car ID: " + this.id + "\nBrand: " + this.brand + "\nModel: " + this.model + "\nType: " + this.type + 
+               "\nYear: " + this.year + "\nSeats: " + this.seats + "\nColor: " + this.color + 
+               "\nRental Fee: $" + this.rentalFee + "/day" + "\nInsurance Fee: $" + this.insuranceFee + "/day" + 
+               "\nService Fee: $" + this.serviceFee + "/day" + "\nDiscount: " + this.discount + "%";
     }
+    
 }
 

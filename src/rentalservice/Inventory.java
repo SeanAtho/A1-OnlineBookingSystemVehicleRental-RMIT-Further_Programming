@@ -24,17 +24,18 @@ public class Inventory {
         try (Scanner scanner = new Scanner(new File("fleet.csv"))) {
             while (scanner.hasNextLine()) {
                 String[] fields = scanner.nextLine().split(",");
-                String brand = fields[0];
-                String model = fields[1];
-                String type = fields[2];
-                int year = Integer.parseInt(fields[3]);
-                int seats = Integer.parseInt(fields[4]);
-                String color = fields[5];
-                double rentalFee = Double.parseDouble(fields[6]);
-                double insuranceFee = Double.parseDouble(fields[7]);
-                double serviceFee = Double.parseDouble(fields[8]);
-                double discount = Double.parseDouble(fields[9]);
-                Car car = new Car(brand, model, type, year, seats, color, rentalFee, insuranceFee, serviceFee, discount);
+                String id = fields[0];
+                String brand = fields[1];
+                String model = fields[2];
+                String type = fields[3];
+                int year = Integer.parseInt(fields[4]);
+                int seats = Integer.parseInt(fields[5]);
+                String color = fields[6];
+                double rentalFee = Double.parseDouble(fields[7]);
+                double insuranceFee = Double.parseDouble(fields[8]);
+                double serviceFee = Double.parseDouble(fields[9]);
+                double discount = Double.parseDouble(fields[10]);
+                Car car = new Car(id, brand, model, type, year, seats, color, rentalFee, insuranceFee, serviceFee, discount);
                 cars.add(car);
             }
         } catch (FileNotFoundException e) {
@@ -103,7 +104,7 @@ public class Inventory {
      * @param id the ID of the car to retrieve
      * @return the car object with the matching ID, or null if not found
      */
-    public Car getCarById(int id) {
+    public Car getCarById(String id) {
         for (Car car : cars) {
             if (car.getId() == id) {
                 return car;

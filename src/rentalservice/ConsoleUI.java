@@ -96,7 +96,7 @@ public class ConsoleUI {
     }
 
     private void viewCarDetails() {
-        int carId = readIntInput("Car ID");
+        String carId = readStringInput("Car ID");
         myCarApp.viewCarDetails(carId);
     }
 
@@ -105,7 +105,7 @@ public class ConsoleUI {
     }
 
     private void bookRental() {
-        int carId = readIntInput("Car ID");
+        String carId = readStringInput("Car ID");
         String name = readStringInput("Name");
         String email = readStringInput("Email");
         int numPassengers = readIntInput("Number of passengers");

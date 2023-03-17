@@ -39,7 +39,7 @@ public class MyCarApp {
         }
     }
 
-    public void viewCarDetails(int carId) {
+    public void viewCarDetails(String carId) {
         Car car = inventory.getCarById(carId);
         if (car != null) {
             System.out.println(car);
@@ -55,7 +55,7 @@ public class MyCarApp {
         }
     }
 
-    public void bookRental(int carId, Customer customer, LocalDate startDate, LocalDate endDate) {
+    public void bookRental(String carId, Customer customer, LocalDate startDate, LocalDate endDate) {
         Car car = inventory.getCarById(carId);
         if (car == null) {
             System.out.println("Car not found");
