@@ -1,6 +1,7 @@
 package rentalservice;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
 public class ConsoleUI {
@@ -16,6 +17,7 @@ public class ConsoleUI {
     
 
     public void start() {
+        System.out.println(System.getProperty("user.dir"));
         System.out.println("---------------------------------------------");
         System.out.println("Welcome to MyCarApp!");
         System.out.println("---------------------------------------------");
@@ -132,10 +134,23 @@ public class ConsoleUI {
     }
 
     private LocalDate readDateInput(String prompt) {
-        System.out.print(prompt + " (yyyy-MM-dd): ");
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        String dateInput = scanner.nextLine();
-        return LocalDate.parse(dateInput, formatter);
+        LocalDate date = null;
+        boolean isValidInput = false;
+        do {
+            System.out.print(prompt);
+            String input = scanner.nextLine();
+            if (input.isEmpty()) {
+                System.out.println("Error: input cannot be empty. Please try again.");
+            } else {
+                try {
+                    date = LocalDate.parse(input);
+                    isValidInput = true;
+                } catch (DateTimeParseException e) {
+                    System.out.println("Error: invalid date format. Please use the format yyyy-MM-dd.");
+                }
+            }
+        } while (!isValidInput);
+        return date;
     }
 
     private void exit() {

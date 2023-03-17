@@ -21,22 +21,27 @@ public class Inventory {
      */
     public Inventory() {
         cars = new ArrayList<>();
-        try (Scanner scanner = new Scanner(new File("Fleet.csv"))) {
+        try {
+            Scanner scanner = new Scanner(new File("fleet.csv"));
+            scanner.nextLine(); // skip header row
             while (scanner.hasNextLine()) {
-                String[] fields = scanner.nextLine().split(",");
+                String line = scanner.nextLine();
+                String[] fields = line.split(",");
+
                 String id = fields[0];
                 String brand = fields[1];
                 String model = fields[2];
                 String type = fields[3];
-                int year = Integer.parseInt(fields[4]);
-                int seats = Integer.parseInt(fields[5]);
+                int year = fields[4].equals("N/A") ? 0 : Integer.parseInt(fields[4]);
+                int seats = fields[5].equals("N/A") ? 0 : Integer.parseInt(fields[5]);
                 String color = fields[6];
-                double rentalFee = Double.parseDouble(fields[7]);
-                double insuranceFee = Double.parseDouble(fields[8]);
-                double serviceFee = Double.parseDouble(fields[9]);
-                double discount = Double.parseDouble(fields[10]);
-                Car car = new Car(id, brand, model, type, year, seats, color, rentalFee, insuranceFee, serviceFee, discount);
-                cars.add(car);
+                double rentalFee = fields[7].equals("N/A") ? 0 : Double.parseDouble(fields[7]);
+                double insuranceFee = fields[8].equals("N/A") ? 0 : Double.parseDouble(fields[8]);
+                double serviceFee = fields[9].equals("N/A") ? 0 : Double.parseDouble(fields[9]);
+                double discount = fields[10].equals("N/A") ? 0 : Double.parseDouble(fields[10]);
+
+            Car car = new Car(id, brand, model, type, year, seats, color, rentalFee, insuranceFee, serviceFee, discount);
+            cars.add(car);
             }
         } catch (FileNotFoundException e) {
             System.out.println("Error: fleet.csv file not found.");

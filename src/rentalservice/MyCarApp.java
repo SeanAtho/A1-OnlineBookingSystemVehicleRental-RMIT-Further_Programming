@@ -62,11 +62,6 @@ public class MyCarApp {
             return;
         }
 
-        if (!inventory.isCarAvailable(car, startDate, endDate)) {
-            System.out.println("Car is not available for rental during the specified dates");
-            return;
-        }
-
         Rental rental = new Rental(car, customer, startDate, endDate);
         viewRentalDetails(rental);
     }
