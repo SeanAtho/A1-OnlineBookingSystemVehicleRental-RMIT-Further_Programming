@@ -98,14 +98,15 @@ public class Inventory {
      * @param id the ID of the car to retrieve
      * @return the car object with the matching ID, or null if not found
      */
-    public Car getCarById(String CarId) {
+    public Car getCarById(String carId) {
         for (Car car : cars) {
-            if (car.getId() == CarId) {
+            if (car.getId().equals(carId)) {
                 return car;
             }
         }
         return null;
     }
+    
 
     /**
      * 
