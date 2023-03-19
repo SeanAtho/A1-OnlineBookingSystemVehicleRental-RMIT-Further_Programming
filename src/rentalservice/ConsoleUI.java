@@ -105,10 +105,11 @@ public class ConsoleUI {
 
     private void bookRental() {
         String carId = readStringInput("Car ID");
-        String name = readStringInput("Name");
+        String firstName = readStringInput("Name");
+        String surName = readStringInput("Name");
         String email = readStringInput("Email");
         int numPassengers = readIntInput("Number of passengers");
-        Customer customer = new Customer(name, email, numPassengers);
+        Customer customer = new Customer(firstName, surName, email, numPassengers);
 
         LocalDate startDate = readDateInput("Start date");
         LocalDate endDate = readDateInput("End date");

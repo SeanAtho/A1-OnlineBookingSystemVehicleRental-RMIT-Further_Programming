@@ -61,12 +61,14 @@ public class MyCarApp {
     }
 
     public void viewRentalDetails(Rental rental) {
+        System.out.println("---------------------------------------------");
         System.out.println("Rental details:");
+        System.out.println("---------------------------------------------");
         System.out.println("Car: " + rental.getCar().getBrand() + " " + rental.getCar().getModel());
-        System.out.println("Renter: " + rental.getCustomer().getName() + " (" + rental.getCustomer().getEmail() + ")");
+        System.out.println("Renter: " + rental.getCustomer().getFirstName() + " " + rental.getCustomer().getSurName() + " (" + rental.getCustomer().getEmail() + ")");
         System.out.println("Rental period: " + rental.getStartDate() + " to " + rental.getEndDate());
         System.out.println("Rental fee: $" + rental.getRentalFee());
         System.out.println("Insurance fee: $" + rental.getInsuranceFee());
+        System.out.println("---------------------------------------------");
     }
-    
 }
