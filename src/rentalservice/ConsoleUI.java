@@ -1,6 +1,6 @@
 package rentalservice;
 import java.time.LocalDate;
-
+import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
@@ -32,7 +32,7 @@ public class ConsoleUI {
             System.out.println("6. Exit");
             System.out.println("---------------------------------------------");
     
-            int choice = readValidIntInput("Choice", 1, 6);
+            int choice = readValidIntInput("> Choice", 1, 6);
     
             switch (choice) {
                 case 1:
@@ -85,7 +85,7 @@ public class ConsoleUI {
 
     private void searchCarsByBrand() {
         String brand = readStringInput("Brand");
-        myCarApp.searchByBrand(brand);
+        myCarApp.searchCarsByBrand(brand);
     }
 
     private void browseCarsByType() {
@@ -105,48 +105,79 @@ public class ConsoleUI {
 
     private void bookRental() {
         String carId = readStringInput("Car ID");
-        String firstName = readStringInput("Name");
-        String surName = readStringInput("Name");
-        String email = readStringInput("Email");
+        String firstName = readStringInput("Please provide your given name");
+        String surName = readStringInput("Please provide your surname");
+        String email = readStringInput("Please provide your email address");
         int numPassengers = readIntInput("Number of passengers");
         Customer customer = new Customer(firstName, surName, email, numPassengers);
 
-        LocalDate startDate = readDateInput("Start date");
-        LocalDate endDate = readDateInput("End date");
+        LocalDate startDate = readDateInput("Please provide pick-up date (dd/mm/yyyy)");
+        LocalDate endDate = readDateInput("Please provide return date (dd/mm/yyyy)");
 
         myCarApp.bookRental(carId, customer, startDate, endDate);
     }
 
     private int readIntInput(String prompt) {
-        System.out.print(prompt + ": ");
-        return scanner.nextInt();
+        int value = 0;
+        boolean validInput = false;
+        do {
+            System.out.print(prompt + ": ");
+            try {
+                String input = scanner.nextLine();
+                if (input.isEmpty()) {
+                    throw new IllegalArgumentException("Input cannot be empty");
+                }
+                value = Integer.parseInt(input);
+                validInput = true;
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a valid number.");
+            } catch (IllegalArgumentException e) {
+                System.out.println("Error: " + e.getMessage() + ". Please try again.");
+            }
+        } while (!validInput);
+        return value;
     }
+    
+    
 
     private String readStringInput(String prompt) {
-        System.out.print(prompt + ": ");
-        return scanner.nextLine().trim();
+        String input = null;
+        boolean validInput = false;
+        do {
+            System.out.print(prompt + ": ");
+            input = scanner.nextLine().trim(); // Trim the input to remove leading/trailing spaces
+            if (!input.isEmpty()) {
+                validInput = true;
+            } else {
+                System.out.println("Error: Input cannot be empty. Please try again.");
+            }
+        } while (!validInput);
+        return input;
     }
+    
     
 
     private LocalDate readDateInput(String prompt) {
         LocalDate date = null;
-        boolean isValidInput = false;
+        boolean validInput = false;
         do {
-            System.out.print(prompt);
-            String input = scanner.nextLine();
-            if (input.isEmpty()) {
-                System.out.println("Error: input cannot be empty. Please try again.");
-            } else {
-                try {
-                    date = LocalDate.parse(input);
-                    isValidInput = true;
-                } catch (DateTimeParseException e) {
-                    System.out.println("Error: invalid date format. Please use the format yyyy-MM-dd.");
+            System.out.print(prompt + ": ");
+            try {
+                String input = scanner.nextLine(); // read the actual input
+                if (input.isEmpty()) {
+                    throw new IllegalArgumentException("Input cannot be empty");
                 }
+                date = LocalDate.parse(input, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+                validInput = true;
+            } catch (DateTimeParseException e) {
+                System.out.println("Invalid date format. Please enter a date in the format dd/MM/yyyy.");
+            } catch (IllegalArgumentException e) {
+                System.out.println("Error: " + e.getMessage() + ". Please try again.");
             }
-        } while (!isValidInput);
+        } while (!validInput);
         return date;
     }
+    
 
     private void exit() {
         System.out.println("Goodbye!");
