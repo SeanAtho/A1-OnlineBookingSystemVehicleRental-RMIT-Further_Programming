@@ -112,6 +112,12 @@ public class MyCarApp {
         viewRentalDetails(rental);
     }
 
+
+    /**
+    Displays the details of a rental, including the car brand and model, renter's name and email,
+    rental period, rental fee, and insurance fee.
+    @param rental The Rental object containing the rental details to display.
+    */
     public void viewRentalDetails(Rental rental) {
         System.out.println("---------------------------------------------");
         System.out.println("Rental details:");
