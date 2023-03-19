@@ -1,17 +1,36 @@
+/**
+This class represents the main application for the MyCar rental service.
+It provides methods to search, browse and book cars, as well as view rental details.
+*/
 package rentalservice;
 import java.time.LocalDate;
 
 public class MyCarApp {
+
+    /**
+    * The inventory of cars managed by the application.
+    */
     private Inventory inventory;
 
+    /**
+    * Constructs a new instance of the MyCarApp class with the specified inventory.
+    * @param inventory The inventory of cars to be managed by the application.
+    */
     public MyCarApp(Inventory inventory) {
         this.inventory = inventory;
     }
 
+    /**
+    * Prints a welcome message to the console.
+    */
     public void start() {
         System.out.println("Welcome to MyCarApp!");
     }
 
+    /**
+    * Searches for cars in the inventory by brand and prints them to the console.
+    * @param brand The brand of the cars to search for.
+    */
     public void searchByBrand(String brand) {
         System.out.println("Searching for cars by brand: " + brand);
         boolean foundCars = false;
@@ -26,7 +45,10 @@ public class MyCarApp {
         }
     }
     
-
+    /**
+    * Browses the inventory of cars by type and prints them to the console.
+    * @param type The type of the cars to browse for.
+    */
     public void browseByType(String type) {
         System.out.println("Browsing cars by type: " + type);
         boolean foundCars = false;
@@ -41,6 +63,10 @@ public class MyCarApp {
         }
     }
 
+    /**
+    * Filters the inventory of cars by number of seats and prints the results to the console.
+    * @param numSeats The minimum number of seats required for a car to be included in the results.
+    */
     public void filterBySeats(int numSeats) {
         System.out.println("Filtering cars by number of seats: " + numSeats);
         boolean foundCars = false;
@@ -55,6 +81,10 @@ public class MyCarApp {
         }
     }
 
+    /**
+    * Displays the details of a car with the specified ID.
+    * @param carId The ID of the car to display details for.
+    */
     public void viewCarDetails(String carId) {
         Car car = inventory.getCarById(carId);
         if (car != null) {
@@ -64,7 +94,13 @@ public class MyCarApp {
         }
     }
 
-
+    /**
+    * Books a rental for the specified car and customer, starting on the specified start date and ending on the specified end date.
+    * @param carId The ID of the car to book a rental for.
+    * @param customer The customer who will rent the car.
+    * @param startDate The start date of the rental.
+    * @param endDate The end date of the rental.
+    */
     public void bookRental(String carId, Customer customer, LocalDate startDate, LocalDate endDate) {
         Car car = inventory.getCarById(carId);
         if (car == null) {
