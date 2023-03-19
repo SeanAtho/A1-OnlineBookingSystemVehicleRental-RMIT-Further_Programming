@@ -14,12 +14,18 @@ public class MyCarApp {
 
     public void searchByBrand(String brand) {
         System.out.println("Searching for cars by brand: " + brand);
+        boolean foundCars = false;
         for (Car car : inventory.getCars()) {
             if (car.getBrand().equalsIgnoreCase(brand)) {
                 System.out.println(car);
+                foundCars = true;
             }
         }
+        if (!foundCars) {
+            System.out.println("No cars found with the brand: " + brand);
+        }
     }
+    
 
     public void browseByType(String type) {
         System.out.println("Browsing cars by type: " + type);
@@ -65,7 +71,7 @@ public class MyCarApp {
         System.out.println("Rental details:");
         System.out.println("---------------------------------------------");
         System.out.println("Car: " + rental.getCar().getBrand() + " " + rental.getCar().getModel());
-        System.out.println("Renter: " + rental.getCustomer().getFirstName() + " " + rental.getCustomer().getsurName() + " (" + rental.getCustomer().getEmail() + ")");
+        System.out.println("Renter: " + rental.getCustomer().getFirstName() + " " + rental.getCustomer().getSurName() + " (" + rental.getCustomer().getEmail() + ")");
         System.out.println("Rental period: " + rental.getStartDate() + " to " + rental.getEndDate());
         System.out.println("Rental fee: $" + rental.getRentalFee());
         System.out.println("Insurance fee: $" + rental.getInsuranceFee());

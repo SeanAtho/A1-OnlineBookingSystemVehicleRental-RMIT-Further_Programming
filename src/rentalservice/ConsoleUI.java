@@ -2,6 +2,7 @@ package rentalservice;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ConsoleUI {
@@ -85,7 +86,7 @@ public class ConsoleUI {
 
     private void searchCarsByBrand() {
         String brand = readStringInput("Brand");
-        myCarApp.searchCarsByBrand(brand);
+        myCarApp.searchByBrand(brand);
     }
 
     private void browseCarsByType() {
