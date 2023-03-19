@@ -67,7 +67,6 @@ public class ConsoleUI {
             System.out.print(prompt + ": ");
             try {
                 choice = scanner.nextInt();
-                scanner.nextLine(); // consume the newline character
                 if (choice >= min && choice <= max) {
                     validInput = true;
                 } else {
@@ -77,9 +76,11 @@ public class ConsoleUI {
                 System.out.println("Invalid input. Please enter a number between " + min + " and " + max);
                 scanner.nextLine(); // consume the invalid input
             }
+            scanner.nextLine(); // consume the newline character
         } while (!validInput);
         return choice;
     }
+    
     
 
     private void searchCarsByBrand() {
