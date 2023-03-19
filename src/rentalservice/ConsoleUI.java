@@ -165,7 +165,11 @@ public class ConsoleUI {
         return value;
     }
     
-    
+    /**
+    Reads a string input from the user with the provided prompt.
+    @param prompt the message prompt to display to the user
+    @return the string value entered by the user
+    */
     private String readStringInput(String prompt) {
         String input = null;
         boolean validInput = false;
@@ -182,7 +186,11 @@ public class ConsoleUI {
     }
     
     
-
+    /**
+    Reads a date input from the user with the provided prompt.
+    @param prompt the message prompt to display to the user
+    @return the LocalDate object representing the date entered by the user
+    */
     private LocalDate readDateInput(String prompt) {
         LocalDate date = null;
         boolean validInput = false;
@@ -204,7 +212,7 @@ public class ConsoleUI {
         return date;
     }
     
-
+    // The exit() method terminates the program with a message.
     private void exit() {
         System.out.println("Goodbye!");
         System.exit(0);
