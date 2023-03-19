@@ -1,5 +1,5 @@
+// The Rental class which represents a rental object that contains details such as the car being rented, rental duration, rental fee, insurance fee, and any discounts applied.
 package rentalservice;
-// Represents a rental object that contains details such as the car being rented, rental duration, rental fee, insurance fee, and any discounts applied.
 import java.time.LocalDate;
 
 public class Rental {
