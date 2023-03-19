@@ -67,6 +67,7 @@ public class ConsoleUI {
             System.out.print(prompt + ": ");
             try {
                 choice = scanner.nextInt();
+                scanner.nextLine(); // consume the newline character
                 if (choice >= min && choice <= max) {
                     validInput = true;
                 } else {
@@ -121,9 +122,9 @@ public class ConsoleUI {
 
     private String readStringInput(String prompt) {
         System.out.print(prompt + ": ");
-        scanner.nextLine(); // consume the new line character
-        return scanner.nextLine();
+        return scanner.nextLine().trim();
     }
+    
 
     private LocalDate readDateInput(String prompt) {
         LocalDate date = null;
