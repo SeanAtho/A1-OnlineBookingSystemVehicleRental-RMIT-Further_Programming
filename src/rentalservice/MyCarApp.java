@@ -29,19 +29,29 @@ public class MyCarApp {
 
     public void browseByType(String type) {
         System.out.println("Browsing cars by type: " + type);
+        boolean foundCars = false;
         for (Car car : inventory.getCars()) {
             if (car.getType().equalsIgnoreCase(type)) {
                 System.out.println(car);
+                foundCars = true;
             }
+        } 
+        if (!foundCars) {
+            System.out.println("No cars found with the type: " + type);
         }
     }
 
     public void filterBySeats(int numSeats) {
         System.out.println("Filtering cars by number of seats: " + numSeats);
+        boolean foundCars = false;
         for (Car car : inventory.getCars()) {
             if (car.getSeats() >= numSeats) {
                 System.out.println(car);
+                foundCars = true;
             }
+        }
+        if (!foundCars) {
+            System.out.println("No cars found with the type: " + numSeats);
         }
     }
 
