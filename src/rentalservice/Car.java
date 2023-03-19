@@ -82,17 +82,24 @@ public class Car {
         return discount;
     }
     
-
     /**
      * Returns a string representation of the Car object.
      */
     @Override
     public String toString() {
-        return "---------------------------------------------\n"+"Car ID: " + this.id + "\nBrand: " + this.brand + "\nModel: " + this.model + "\nType: " + this.type + 
-               "\nYear: " + this.year + "\nSeats: " + this.seats + "\nColor: " + this.color + 
-               "\nRental Fee: $" + this.rentalFee + "/day" + "\nInsurance Fee: $" + this.insuranceFee + "/day" + 
-               "\nService Fee: $" + this.serviceFee + "/day" + "\nDiscount: " + this.discount + "%" +"\n---------------------------------------------";
+        return "---------------------------------------------\n" +
+               "Car ID: " + this.id + "\n" +
+               "Brand: " + this.brand + "\n" +
+               "Model: " + this.model + "\n" +
+               "Type: " + this.type + "\n" +
+               "Year: " + this.year + "\n" +
+               "Seats: " + this.seats + "\n" +
+               "Color: " + this.color + "\n" +
+               "Rental Fee: $" + this.rentalFee + "/day" + "\n" +
+               "Insurance Fee: $" + this.insuranceFee + "/day" + "\n" +
+               "Service Fee: $" + this.serviceFee + "/day" + "\n" +
+               "Discount: " + this.discount + "%" + "\n" +
+               "---------------------------------------------";
     }
     
 }
-
