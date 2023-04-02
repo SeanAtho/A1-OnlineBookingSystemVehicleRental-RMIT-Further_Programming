@@ -17,14 +17,18 @@ public class MyCarApp {
     * @param inventory The inventory of cars to be managed by the application.
     */
     public MyCarApp(Inventory inventory) {
-        this.inventory = inventory;
+        if (inventory == null) {
+            this.inventory = new Inventory();
+        } else {
+            this.inventory = inventory;
+        }
     }
 
     public Inventory getInventory() {
         return inventory;
     }
 
-    /**
+    /** 
     * Prints a welcome message to the console.
     */
     public void start() {

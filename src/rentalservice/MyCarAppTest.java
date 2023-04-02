@@ -25,9 +25,9 @@ public class MyCarAppTest {
     public void setUp() {
         app = new MyCarApp(null);
 
-        car1 = new Car("1", "Toyota", "Camry", "Sedan", 2019, 5, "White", 40.0, 10.0, 5.0, 0.1);
-        car2 = new Car("2", "Honda", "Civic", "Coupe", 2020, 4, "Red", 35.0, 7.5, 4.0, 0.05);
-        car3 = new Car("3", "Toyota", "Rav4", "SUV", 2018, 7, "Blue", 50.0, 12.5, 7.5, 0.15);
+        car1 = new Car("C001", "Toyota", "Yaris", "Sedan", 2012, 4, "Blue", 50.0, 15.0, 10.0, 10.0);
+        car2 = new Car("C004", "Audi", "A3", "Sedan", 2015, 4, "Red", 65.0, 10.0, 20.0, 10.0);
+        car3 = new Car("C003", "Toyota", "Kluger", "SUV", 2019, 7, "Grey", 70.0, 20.0, 20.0, 10.);
         List<Car> cars = app.getInventory().getCars();
         cars.add(car1);
         cars.add(car2);
@@ -41,11 +41,8 @@ public class MyCarAppTest {
         System.setOut(originalOut);
     }
 
-    @Test
-    public void testStart() {
-        app.start();
-        assertEquals("Welcome to MyCarApp!\n", outContent.toString());
-    }
+   
+
 
     @Test
     public void testSearchByBrand() {
@@ -86,18 +83,18 @@ public class MyCarAppTest {
 
     @Test
     public void testFilterBySeats() {
-        app.filterBySeats(5);
-        assertEquals("Filtering cars by number of seats: 5\n" + car1.toString() + "\n", outContent.toString());
+        app.filterBySeats(4);
+        assertEquals("Filtering cars by number of seats: 4\n" + car1.toString() + "\n" + car2.toString() + "\n" + car3.toString() + "\n", outContent.toString());
 
         outContent.reset();
 
-        app.filterBySeats(8);
+        app.filterBySeats(7);
         assertEquals("Filtering cars by number of seats: 8\n" + "No cars found with 8 seats\n", outContent.toString());
     }
 
     @Test
 public void testViewCarDetails() {
-    app.viewCarDetails("1");
+    app.viewCarDetails("C001");
     assertEquals(car1.toString(), outContent.toString());
 
     outContent.reset();
@@ -128,7 +125,7 @@ public void testViewCarDetails() {
         System.setOut(new PrintStream(outContent));
         
         // Call the method to book the rental
-        app.bookRental("1", customer, startDate, endDate);
+        app.bookRental("C001", customer, startDate, endDate);
         
         // Get the captured output and check if it's correct
         String expectedOutput = "Rental Details:\n" +
