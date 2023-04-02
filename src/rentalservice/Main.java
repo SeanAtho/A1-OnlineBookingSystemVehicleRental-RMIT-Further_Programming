@@ -7,7 +7,7 @@ package rentalservice;
 public class Main {
     public static void main(String[] args) {
         // Create a new ConsoleUI object and start the application.
-        ConsoleUI ui = new ConsoleUI();
+        ConsoleUI ui = new ConsoleUI(null);
         ui.start();
     }
 }

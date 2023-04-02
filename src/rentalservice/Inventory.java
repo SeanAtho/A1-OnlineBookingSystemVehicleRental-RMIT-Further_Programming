@@ -44,6 +44,10 @@ public class Inventory {
         }
     }
 
+    public void setCars(List<Car> newCars) {
+        cars = newCars;
+    }
+    
     /**
      * Searches for all cars in the inventory with a matching brand.
      * @param brand the brand to search for

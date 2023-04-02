@@ -15,7 +15,7 @@ public class ConsoleUI {
     private final Scanner scanner; // instance of Scanner class to read console input
     
     // constructor to create an instance of MyCarApp and Scanner
-    public ConsoleUI() {
+    public ConsoleUI(MyCarApp myCarApp) {
         Inventory inventory = new Inventory();
         this.myCarApp = new MyCarApp(inventory);
         this.scanner = new Scanner(System.in);
@@ -70,7 +70,7 @@ public class ConsoleUI {
     }
    
     // helper method to read valid integer input from user within a given range 
-    private int readValidIntInput(String prompt, int min, int max) {
+    int readValidIntInput(String prompt, int min, int max) {
         int choice = 0;
         boolean validInput = false;
         do {
@@ -93,25 +93,25 @@ public class ConsoleUI {
     
     
     // helper method to search cars by brand
-    private void searchCarsByBrand() {
+    void searchCarsByBrand() {
         String brand = readStringInput("Brand"); // helper method to read string input from user
         myCarApp.searchByBrand(brand); // call method in MyCarApp to search for cars by brand
     }
 
     // helper method to browse cars by type
-    private void browseCarsByType() {
+    void browseCarsByType() {
         String type = readStringInput("Type");// helper method to read string input from user
         myCarApp.browseByType(type); // call method in MyCarApp to search for cars by type
     }
 
     // helper method to browse cars by seats
-    private void filterCarsBySeats() {
+    void filterCarsBySeats() {
         int numSeats = readIntInput("Number of seats"); // helper method to read string input from user
         myCarApp.filterBySeats(numSeats); // call method in MyCarApp to search for cars by seats
     }
 
     // helper method to browse cars by Car ID
-    private void viewCarDetails() {
+    void viewCarDetails() {
         String carId = readStringInput("Car ID"); // helper method to read string input from user
         myCarApp.viewCarDetails(carId); // call method in MyCarApp to search for cars by Car ID
     }
@@ -170,7 +170,7 @@ public class ConsoleUI {
     @param prompt the message prompt to display to the user
     @return the string value entered by the user
     */
-    private String readStringInput(String prompt) {
+    String readStringInput(String prompt) {
         String input = null;
         boolean validInput = false;
         do {
@@ -191,7 +191,7 @@ public class ConsoleUI {
     @param prompt the message prompt to display to the user
     @return the LocalDate object representing the date entered by the user
     */
-    private LocalDate readDateInput(String prompt) {
+    LocalDate readDateInput(String prompt) {
         LocalDate date = null;
         boolean validInput = false;
         do {
