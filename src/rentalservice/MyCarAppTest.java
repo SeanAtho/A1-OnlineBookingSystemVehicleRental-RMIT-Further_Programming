@@ -93,7 +93,7 @@ public class MyCarAppTest {
     }
 
     @Test
-public void testViewCarDetails() {
+    public void testViewCarDetails() {
     app.viewCarDetails("C001");
     assertEquals(car1.toString(), outContent.toString());
 
@@ -111,7 +111,7 @@ public void testViewCarDetails() {
 
     app.viewCarDetails("4");
     assertEquals("No car found with ID: 4\n", outContent.toString());
-}
+    }
 
     @Test
     public void testBookRental() {
