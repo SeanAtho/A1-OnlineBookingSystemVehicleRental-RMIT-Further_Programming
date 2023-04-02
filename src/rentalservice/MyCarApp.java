@@ -20,6 +20,10 @@ public class MyCarApp {
         this.inventory = inventory;
     }
 
+    public Inventory getInventory() {
+        return inventory;
+    }
+
     /**
     * Prints a welcome message to the console.
     */
